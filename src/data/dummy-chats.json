@@ -1,0 +1,37 @@
+[
+    {
+      "_id": "chat_id_1",
+      "isGroupChat": false,
+      "users": [
+        { "_id": "user_me_123", "name": "Ayush", "email": "ayush@example.com" },
+        { "_id": "user_jane_456", "name": "Jane Doe", "email": "jane@example.com" }
+      ],
+      "latestMessage": {
+        "sender": { "_id": "user_jane_456", "name": "Jane Doe" },
+        "content": "Hey, are you free to review my PR?"
+      }
+    },
+    {
+      "_id": "chat_id_2",
+      "isGroupChat": true,
+      "chatName": "Project Phoenix Team",
+      "users": [
+        { "_id": "user_me_123", "name": "Ayush", "email": "ayush@example.com" },
+        { "_id": "user_jane_456", "name": "Jane Doe", "email": "jane@example.com" },
+        { "_id": "user_bob_789", "name": "Bob Smith", "email": "bob@example.com" }
+      ],
+      "latestMessage": {
+        "sender": { "_id": "user_me_123", "name": "Ayush" },
+        "content": "Sure, I'll take a look now."
+      }
+    },
+    {
+      "_id": "chat_id_3",
+      "isGroupChat": false,
+      "users": [
+        { "_id": "user_me_123", "name": "Ayush", "email": "ayush@example.com" },
+        { "_id": "user_alice_101", "name": "Alice Johnson", "email": "alice@example.com" }
+      ],
+      "latestMessage": null
+    }
+  ]

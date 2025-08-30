@@ -8,6 +8,7 @@ export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    console.log('AuthContext.js AuthProvider initialized');
 
     useEffect(() => {
         const loadToken = async () => {
@@ -33,19 +34,21 @@ export const AuthProvider = ({children}) => {
     }, []);
 
     const login = async (email, password) => {
+        console.log('AuthContext.js, bonita login');
         try {
+            console.log('AuthContext.js, inside login function try block');
             const response = await api.post('/api/auth/login', {email, password});
-            const {token, ...userData} = response.data;
+            const {token1, ...userData} = response.data;
 
-            setToken(token);
+            setToken(token1);
             setUser(userData);
 
-            await AsyncStorage.setItem('userToken', token);
-            await AsyncStorage.setItem('user', JSON.stringify(userData));
+            // await AsyncStorage.setItem('userToken', token1);
+            // await AsyncStorage.setItem('user', JSON.stringify(userData));
 
             return response.data;
         } catch(error){
-            console.log('login failed', error.response.data);
+            console.log('AuthContext.js, login failed', error.response.data);
             throw error;        
         }
     }
